@@ -6,26 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Daily Journal</title>
     <link rel="stylesheet" href="/styles/main.css" />
-    <link rel="stylesheet" href="/styles/dailyJournal.css" />
   </head>
   <body>
-    <header>
-      <h1>Welcome to the 90's AF Personal Website of Alex Levy</h1>
-      <nav>
-        <ul class="navbar">
-          <li class="navitem"><a href="../index.html">Home</a></li>
-          <li class="navitem">
-            <a href="../pages/dailyJournal.html">Daily Journal</a>
-          </li>
-          <li class="navitem">
-            <a href="../pages/terminal.html">Terminal</a>
-          </li>
-          <li class="navitem"><a href="../pages/test3.html">Test3</a></li>
-          <li class="navitem"><a href="../pages/test4.html">Test4</a></li>
-          <li class="navitem"><a href="../pages/test5.html">Test5</a></li>
-        </ul>
-      </nav>
-    </header>
     <header id="journal-header">
       <!-- <section class="logo"> -->
       <img
@@ -34,13 +16,37 @@
         alt="a notebook with a mostly drank cup of coffee"
       />
       <!-- </section> -->
-      <h2 id="journal-greeting">Hello, Alex!<br />Tell me about your day:</h2>
+      <h2 id="journal-greeting">
+        Hello, Alex!<br />Welcome to your private journal<br />Tell me about
+        your day:
+      </h2>
     </header>
     <main>
+      <h2>Daily Journal</h2>
       <form action="">
         <fieldset>
           <label for="journalDate">Date of Entry</label>
           <input type="date" name="journalDate" id="journalDate" />
+        </fieldset>
+        <fieldset>
+          <label for="journalConcepts">Concepts Covered</label>
+          <input type="text" name="journalConcepts" id="journalConcepts" />
+        </fieldset>
+        <fieldset>
+          <label for="journalEntry">Journal Entry</label>
+          <textarea rows="5" cols="50" name="journalEntry" id="journalEntry">Tell me about your day :)</textarea>
+        </fieldset>
+        <fieldset>
+          <label for="journalMood">Mood for the Day</label>
+          <select name="journalMood" id="journalMood">
+            <option value="ecstatic">Ecstatic</option>
+            <option value="despondent">Despondent</option>
+            <option value="meh ">Meh</option>
+          </select>
+        </fieldset>
+        <fieldset>
+          <label for="journalSubmit"></label>
+          <input type="submit" value="Record Journal Entry" name="journalSubmit" id="journalSubmit" />
         </fieldset>
       </form>
       <section class="journal-previous-entries">
@@ -56,6 +62,5 @@
     </main>
     <footer>Copyright 2022 Nobody Anywhere</footer>
     <script src="/scripts/main.js"></script>
-    <script src="/scripts/dailyJournal.js"></script>
   </body>
 </html>

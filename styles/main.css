@@ -49,6 +49,12 @@ footer {
     padding-left: 10%;
 }
 
+fieldset {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+
 /* Color Pallet From Coolors: 
 
 Outer Space Crayola: #36413E;
