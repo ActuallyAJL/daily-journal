@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Journal</title>
+    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/styles/dailyJournal.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to the 90's AF Personal Website of Alex Levy</h1>
+      <nav>
+        <ul class="navbar">
+          <li class="navitem"><a href="../index.html">Home</a></li>
+          <li class="navitem">
+            <a href="../pages/dailyJournal.html">Daily Journal</a>
+          </li>
+          <li class="navitem">
+            <a href="../pages/terminal.html">Terminal</a>
+          </li>
+          <li class="navitem"><a href="../pages/test3.html">Test3</a></li>
+          <li class="navitem"><a href="../pages/test4.html">Test4</a></li>
+          <li class="navitem"><a href="../pages/test5.html">Test5</a></li>
+        </ul>
+      </nav>
+    </header>
+    <header id="journal-header">
+      <!-- <section class="logo"> -->
+      <img
+        class="logo"
+        src="../images/journal-logo.jpg"
+        alt="a notebook with a mostly drank cup of coffee"
+      />
+      <!-- </section> -->
+      <h2 id="journal-greeting">Hello, Alex!<br />Tell me about your day:</h2>
+    </header>
+    <main>
+      <form action="">
+        <fieldset>
+          <label for="journalDate">Date of Entry</label>
+          <input type="date" name="journalDate" id="journalDate" />
+        </fieldset>
+      </form>
+      <section class="journal-previous-entries">
+        <article>
+          <h3 class="journal-entry-date">DATE</h3>
+          <h3 class="journal-entry-concepts">CONCEPTS</h3>
+          <article class="journal-entry-body">
+            <p>JOURNAL ENTRY BODY</p>
+          </article>
+          <button>EDIT</button><button>DELETE</button>
+        </article>
+      </section>
+    </main>
+    <footer>Copyright 2022 Nobody Anywhere</footer>
+    <script src="/scripts/main.js"></script>
+    <script src="/scripts/dailyJournal.js"></script>
+  </body>
+</html>

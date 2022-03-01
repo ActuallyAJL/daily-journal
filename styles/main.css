@@ -1,0 +1,58 @@
+body {
+  background-color: #d7d6d6;
+  color: #36413e;
+}
+
+button {
+  border: solid 1px;
+}
+
+.navbar {
+  display: flex;
+  background: #beb2c8;
+  justify-content: flex-start;
+  /* align-content: space-between; */
+  align-items: center;
+  height: 2em;
+  border-radius: 5px;
+  list-style: none;
+}
+
+.navitem {
+    border-radius: 5px;
+    /* background: #d7d6d6; */
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 2px;
+}
+
+.logo {
+    /* display: flex; */
+    width: auto;
+    height: 150px;
+    /* flex-wrap: wrap; */
+}
+
+footer {
+  background: #beb2c8;
+}
+
+#journal-header {
+    display: flex;
+    height: 150px;
+    flex-flow: nowrap row;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+
+#journal-greeting {
+    padding-left: 10%;
+}
+
+/* Color Pallet From Coolors: 
+
+Outer Space Crayola: #36413E;
+Davys Gray: #5D5E60;
+Taupe Gray: #8D8D92;
+Thistle: #BEB2C8;
+Light Gray: #D7D6D6; */
