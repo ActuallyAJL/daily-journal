@@ -55,6 +55,18 @@ fieldset {
   max-width: 400px;
 }
 
+.journal-previous-entries {
+  border: solid 1px;
+  padding: 5px;
+  margin-left: 2px;
+}
+
+.singleEntry {
+  border: solid 1px;
+  padding: 5px;
+  margin-top: 5px;
+}
+
 /* Color Pallet From Coolors: 
 
 Outer Space Crayola: #36413E;
