@@ -1,6 +1,8 @@
 import { getJournalEntries } from './journalData.js';
+import { JournalEntryComponent } from './helper.js';
 
 const entrySpace = document.querySelector('.journal-previous-entries');
+const header = document.querySelector('#journal-greeting');
 
 const renderEntries = () => {
     let entryArray=getJournalEntries();
@@ -19,4 +21,10 @@ const renderEntries = () => {
     }
 }
 
+const renderGreeting = () => {
+    const greetingHTML = `Hello, Alex!, <br />Welcome to your private journal<br />Today's date is ${JournalEntryComponent()}<br />Tell me about your day:`;
+    return greetingHTML;
+}
+
+header.innerHTML = renderGreeting();
 renderEntries();
