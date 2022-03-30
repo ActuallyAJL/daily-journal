@@ -1,33 +1,28 @@
-import { getPosts } from "./journalData.js";
-import { JournalEntryComponent } from "./helper.js";
+import * as renderJournal from "./JournalEntryList.js";
+import * as JournalData from "./journalData.js";
+import { renderGreeting } from './pageLoader.js';
 
-const entrySpace = document.querySelector(".journal-previous-entries");
-const header = document.querySelector("#journal-greeting");
+renderGreeting();
+renderJournal.renderEntries();
 
-const renderEntries = () => {
-  getPosts().then((entryArray) => {
-      const something = entryArray
-      .map((singleEntry) => {
-        return `
-            <article class = 'singleEntry'>
-                <h3 class="journal-entry-date">${singleEntry.date}</h3>
-                <h3 class="journal-entry-concepts">${singleEntry.concept}</h3>
-                <article class="journal-entry-body">
-                    <p>${singleEntry.entry}</p>
-                    <p>I'm feeling ${singleEntry.mood} about it</p>
-                </article>
-                <button>EDIT</button><button>DELETE</button>
-            </article>
-            `;
-      }).join(' ');
-      entrySpace.innerHTML = something;
-  });
-};
 
-const renderGreeting = () => {
-  const greetingHTML = `Hello, Alex!, <br />Welcome to your private journal<br />Today's date is ${JournalEntryComponent()}<br />Tell me about your day:`;
-  return greetingHTML;
-};
+document.addEventListener("click", (event) => {
+  if (event.target.id === "journalSubmit") {
+    const postObj = {
+      date: document.querySelector("#journalDate").value,
+      concept: document.querySelector("#journalConcepts").value,
+      entry: document.querySelector("#journalEntry").value,
+      mood: document.querySelector("#journalMood").value,
+    };
+    JournalData.createPost(postObj);
+    renderJournal.renderEntries();
+  }
+});
 
-header.innerHTML = renderGreeting();
-renderEntries();
+
+document.addEventListener("change" , (event) => {
+  if (event.target.id === 'filterMood') {
+    const thisMood = event.target.value;
+    renderJournal.renderEntriesByMood(thisMood);
+  }
+})

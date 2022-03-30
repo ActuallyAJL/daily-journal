@@ -1,24 +1,46 @@
-/*
- *  Purpose:
- *    To render as many journal entry components as
- *    there are items in the collection exposed by the
- *    data module component
- */
-import { getJournalEntries } from "./JournalData.js"
-import { JournalEntryComponent } from "./JournalEntry.js"
+import * as filter from './filters.js';
+import { getPosts } from "./JournalData.js"
 
 // DOM reference to where all entries will be rendered
-const entryLog = document.querySelector("#entryLog")
+const entrySpace = document.querySelector(".journal-previous-entries");
 
-export const EntryListComponent = () => {
-    // Use the journal entry data from the data module component
-    const entries = getJournalEntries()
+export const renderEntries = () => {
+    getPosts().then((entryArray) => {
+        const something = entryArray
+        .map((singleEntry) => {
+          return `
+              <article class = 'singleEntry'>
+                  <h3 class="journal-entry-date">${singleEntry.date}</h3>
+                  <h3 class="journal-entry-concepts">${singleEntry.concept}</h3>
+                  <article class="journal-entry-body">
+                      <p>${singleEntry.entry}</p>
+                      <p>I'm feeling ${singleEntry.mood} about it</p>
+                  </article>
+                  <button>EDIT</button><button>DELETE</button>
+              </article>
+              `;
+        }).join(' ');
+        entrySpace.innerHTML = something;
+    });
+  };
 
-    for (const entry of entries) {
-        /*
-            Invoke the component that returns an
-            HTML representation of a single entry
-        */
-        entryLog.innerHTML += ???
-    }
-}
+
+  export const renderEntriesByMood = (thisMood) => {
+    filter.byMood(thisMood).then((entryArray) => {
+        const something = entryArray
+        .map((singleEntry) => {
+          return `
+              <article class = 'singleEntry'>
+                  <h3 class="journal-entry-date">${singleEntry.date}</h3>
+                  <h3 class="journal-entry-concepts">${singleEntry.concept}</h3>
+                  <article class="journal-entry-body">
+                      <p>${singleEntry.entry}</p>
+                      <p>I'm feeling ${singleEntry.mood} about it</p>
+                  </article>
+                  <button>EDIT</button><button>DELETE</button>
+              </article>
+              `;
+        }).join(' ');
+        entrySpace.innerHTML = something;
+    });
+  };
