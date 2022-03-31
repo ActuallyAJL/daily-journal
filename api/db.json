@@ -48,24 +48,17 @@
       "mood": "meh"
     },
     {
+      "concept": "Editing an entry",
+      "mood": "despondent",
+      "entry": "Today I implemented a feature to edit a post in my daily journal",
       "date": "2022-03-30",
-      "concept": "test",
-      "entry": "Tell me about your day :)",
-      "mood": "ecstatic",
       "id": 6
     },
     {
-      "date": "2022-03-30",
-      "concept": "stfgh",
-      "entry": "dfgdsg",
-      "mood": "meh",
-      "id": 7
-    },
-    {
-      "date": "2022-03-30",
       "concept": "Filtering",
-      "entry": "I just got my filter by mood working. I can now sort posts by what mood I am im.",
       "mood": "ecstatic",
+      "entry": "I just got my filter by mood working. I can now sort posts by what mood I am in.\n\nEdit: I have not gotten the other filters working yet. They do nothing at time of writing",
+      "date": "2022-03-30",
       "id": 8
     }
   ]

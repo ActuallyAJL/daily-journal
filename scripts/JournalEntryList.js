@@ -16,7 +16,7 @@ export const renderEntries = () => {
                       <p>${singleEntry.entry}</p>
                       <p>I'm feeling ${singleEntry.mood} about it</p>
                   </article>
-                  <button>EDIT</button><button>DELETE</button>
+                  <button id='edit__${singleEntry.id}'>EDIT</button><button id='delete__${singleEntry.id}'>DELETE</button>
               </article>
               `;
         }).join(' ');
@@ -37,7 +37,7 @@ export const renderEntries = () => {
                       <p>${singleEntry.entry}</p>
                       <p>I'm feeling ${singleEntry.mood} about it</p>
                   </article>
-                  <button>EDIT</button><button>DELETE</button>
+                  <button id='edit__${singleEntry.id}'>EDIT</button><button id='delete__${singleEntry.id}'>DELETE</button>
               </article>
               `;
         }).join(' ');
