@@ -59,7 +59,7 @@ document.addEventListener("click", event => {
       date: thisDate,
       id: parseInt(thisId)
     }
-    
+
     JournalData.updatePost(postObject)
       .then(response => {
         renderJournal.renderEntries();
@@ -70,4 +70,14 @@ document.addEventListener("click", event => {
 
 const showEdit = (postObj) => {
   renderEditBox(postObj);
+}
+
+const checkForUser = () => {
+  if (sessionStorage.getItem("user")){
+    setLoggedInUser(JSON.parse(sessionStorage.getItem("user")));
+    startGiffyGram();
+  }else {
+    //show login/register
+    console.log("showLogin")
+  }
 }
